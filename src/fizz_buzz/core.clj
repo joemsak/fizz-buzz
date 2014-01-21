@@ -1,4 +1,5 @@
 (ns fizz-buzz.core)
+(declare calculate is-factor-of?)
 
 
 (defn calculate [number]
