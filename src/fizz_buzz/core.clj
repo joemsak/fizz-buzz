@@ -14,3 +14,6 @@
       buzz? "buzz"
       :else number)))
 
+(defn run [number-range]
+  (let [fizz-buzzed (map #(calculate %) number-range)]
+    (apply println fizz-buzzed)))

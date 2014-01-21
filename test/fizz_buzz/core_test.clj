@@ -33,3 +33,6 @@
            (assert-returned 7) (assert-returned 8) (assert-returned 11)
            (assert-returned 13) (assert-returned 14) (assert-returned 16)))
 
+(deftest stupid-visual-run-test ; HOWTO: Test println?
+  (testing "watch fizz-buzz run up to 100"
+           (fizz-buzz/run (range 1 101))))
