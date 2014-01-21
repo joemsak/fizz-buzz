@@ -1,17 +1,16 @@
 (ns fizz-buzz.core)
 
-(defn fizz? [number]
-  (zero? (rem number 3)))
+(defn is-divisible-by? [n d]
+  (zero? (rem n d)))
 
-(defn buzz? [number]
-  (zero? (rem number 5)))
+(defn calculate [number]
+  (let [fizz? (is-divisible-by? number 3)
+        buzz? (is-divisible-by? number 5)
+        both? (and fizz? buzz?)]
 
-(defn both? [number]
-  (and (fizz? number) (buzz? number)))
+    (cond
+      both? "fizzbuzz"
+      fizz? "fizz"
+      buzz? "buzz"
+      :else number)))
 
-(defn run [number]
-  (cond
-    (both? number) "fizzbuzz"
-    (fizz? number) "fizz"
-    (buzz? number) "buzz"
-    :else number))
