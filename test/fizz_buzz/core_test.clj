@@ -35,4 +35,4 @@
 
 (deftest stupid-visual-run-test ; HOWTO: Test println?
   (testing "watch fizz-buzz run up to 100"
-           (fizz-buzz/run (range 1 101))))
+           (fizz-buzz/-main (range 1 101)))) ; HOWTO: Just call fizz-buzz?

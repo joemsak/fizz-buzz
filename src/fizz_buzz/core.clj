@@ -1,6 +1,9 @@
 (ns fizz-buzz.core)
 (declare calculate is-factor-of?)
 
+(defn -main [number-range]
+  (let [fizz-buzzed (map #(calculate %) number-range)]
+    (apply println fizz-buzzed)))
 
 (defn calculate [number]
   (let [fizz? (is-factor-of? number 3)
@@ -12,10 +15,6 @@
       fizz? "fizz"
       buzz? "buzz"
       :else number)))
-
-(defn run [number-range]
-  (let [fizz-buzzed (map #(calculate %) number-range)]
-    (apply println fizz-buzzed)))
 
 (defn is-factor-of? [n d]
   (zero? (rem n d)))
